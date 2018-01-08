@@ -1,9 +1,21 @@
 # paklek-cli
 ## Installation
-`npm i -g paklek-cli` or `yarn global add paklek-cli`
+```
+npm i -g paklek-cli
+```
+or
+```
+yarn global add paklek-cli
+```
 
 ## Usage
-`pl --help` or `paklek-cli --help`
+```
+pl --help
+```
+or
+```
+paklek-cli --help
+```
 
 ## TODO
 ### Development
