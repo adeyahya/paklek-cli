@@ -16,4 +16,4 @@ program
 // immediately exit when no args provided
 if (process.argv.length === 2) process.exit();
 if (program.upload) upload(program.upload);
-if (program.bpi) bpi(program.bpi)
+if (program.bpi) bpi(program.bpi);
