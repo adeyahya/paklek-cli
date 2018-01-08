@@ -19,7 +19,16 @@ const bpi = async (command, callback) => {
     spinner.succeed();
     let table = new Table();
     const {bpi} = res.data;
-    if (command === "latest") {
+    if (command === "monthly") {
+      table = new Table({
+        head: ["DATE", "VALUE"]
+      });
+      R.keys(bpi).forEach(item => {
+        table.push([
+          item, currencyFormatter.format(bpi[item], {code: "IDR"})
+        ])
+      })
+    } else {
       const bpiArray = R.values(bpi);
       table = new Table({
         head: ["CURRENCY", "VALUE", "DESCRIPTION"]
@@ -31,15 +40,6 @@ const bpi = async (command, callback) => {
           obj.description
         ]);
       });
-    } else if (program.bpi === "monthly") {
-      table = new Table({
-        head: ["DATE", "VALUE"]
-      });
-      R.keys(bpi).forEach(item => {
-        table.push([
-          item, currencyFormatter.format(bpi[item], {code: "IDR"})
-        ])
-      })
     }
     console.log(table.toString());
     if (callback) return callback();

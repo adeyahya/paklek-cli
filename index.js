@@ -9,8 +9,8 @@ const bpi = require('./blueprints/bpi');
 
 program
   .version("0.0.1")
-  .option("--bpi <bpi>", "latest Bitcoin Price Index")
-  .option("-u --upload <file>", "Upload file into file.io")
+  .option("--bpi [options]", "Check bitcoin price index latest|monthly default: latest")
+  .option("-u --upload <filename>", "Upload file into file.io")
   .parse(process.argv);
 
 // immediately exit when no args provided
