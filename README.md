@@ -1,5 +1,5 @@
 # paklek-cli
-## Instalation
+## Installation
 `npm i -g paklek-cli` or `yarn global add paklek-cli`
 
 ## Usage
