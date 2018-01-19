@@ -6,14 +6,18 @@ const inquirer = require("inquirer");
 // blueprints
 const upload = require('./blueprints/upload');
 const bpi = require('./blueprints/bpi');
+const wallpaperUpdater = require('./blueprints/wallpaperUpdater');
+const ytcr = require('./blueprints/ytcRandomizer');
 
 program
   .version("0.0.1")
   .option("--bpi [options]", "Check bitcoin price index latest|monthly default: latest")
   .option("-u --upload <filename>", "Upload file into file.io")
+  .option("--ytcr <youtube-video-url>", "Youtube Comment Randomizer")
   .parse(process.argv);
 
 // immediately exit when no args provided
 if (process.argv.length === 2) process.exit();
 if (program.upload) upload(program.upload);
 if (program.bpi) bpi(program.bpi);
+if (program.ytcr) ytcr(program.ytcr);
