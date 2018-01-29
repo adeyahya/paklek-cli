@@ -10,8 +10,8 @@ const getYoutubeVideoId = url => {
   return R.pathOr(null, [5], url.match(rules));
 }
 
-const spinner = ora('Ngumpulno kabeh komen sek yo!').start();
 const ytcRandomizer = async (command, callback, pageToken = null, result = []) => {
+  const spinner = ora('Ngumpulno kabeh komen sek yo!').start();
   try {
     const videoId = getYoutubeVideoId(command)
     if (!videoId) {
